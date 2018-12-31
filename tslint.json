@@ -1,19 +1,20 @@
 {
-  "defaultSeverity": "warning",
   "extends": [
-    "tslint:recommended"
+    "tslint:recommended",
+    "tslint-config-standard"
   ],
-  "linterOptions": {
-    "exclude": [
-      "node_modules/**"
-    ]
-  },
   "rules": {
-    "quotemark": [true, "single"],
-    "indent": [true, "spaces", 2],
-    "interface-name": false,
     "ordered-imports": false,
+    "no-var-requires": false,
+    "arrow-parens": false,
+    "no-console": [false],
+    "no-empty": false,
     "object-literal-sort-keys": false,
-    "no-consecutive-blank-lines": false
+    "interface-name": false,
+    "forin": false,
+    "align": false,
+    "no-bitwise": false,
+    "no-conditional-assignment": false,
+    "max-classes-per-file": false
   }
 }

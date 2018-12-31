@@ -1,18 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
     "module": "esnext",
     "strict": true,
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "declaration": true,
     "sourceMap": true,
-    "baseUrl": ".",
+    "noImplicitAny": false,
+    "baseUrl": "./app",
+    "outDir": "./lib",
     "types": [
-      "webpack-env"
+      "webpack-env",
+      "vue-socket.io-extended/types/index"
     ],
     "paths": {
       "@/*": [
@@ -26,12 +30,11 @@
       "scripthost"
     ]
   },
+  "typeAcquisition": {
+    "enable": true
+  },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "app/**/*.ts",
   ],
   "exclude": [
     "node_modules"

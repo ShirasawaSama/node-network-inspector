@@ -1,24 +1,77 @@
 {
-  "name": "test",
+  "name": "network-inspector",
   "version": "0.1.0",
-  "private": true,
+  "main": "./lib/index.js",
+  "author": {
+    "name": "Shirasawa",
+    "url": "https://github.com/ShirasawaSama"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/ShirasawaSama/node-network-inspector",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShirasawaSama/node-network-inspector.git"
+  },
+  "typings": "./lib/index.d.ts",
+  "keywords": [
+    "network",
+    "inspector",
+    "vue",
+    "vuetify",
+    "typescript"
+  ],
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "web": "vue-cli-service serve",
+    "build": "npm run build-web && npm run build-lib",
+    "build-web": "vue-cli-service build",
+    "build-lib": "tsc --module commonjs",
+    "lint": "vue-cli-service lint",
+    "serve": "ts-node-dev --compilerOptions \"{\\\"module\\\":\\\"commonjs\\\"}\" app/index.ts"
   },
   "dependencies": {
-    "register-service-worker": "^1.5.2",
-    "vue": "^2.5.17",
-    "vue-class-component": "^6.0.0",
-    "vue-property-decorator": "^7.0.0",
-    "vue-router": "^3.0.1"
+    "express": "^4.16.4",
+    "express-history-api-fallback": "^2.2.1",
+    "fast-safe-stringify": "^2.0.6",
+    "opn": "^5.4.0",
+    "portfinder": "^1.0.20",
+    "prettier": "^1.15.3",
+    "socket.io": "^2.2.0",
+    "tslib": "^1.9.3"
   },
   "devDependencies": {
+    "@types/express": "^4.16.0",
+    "@types/node": "^10.12.18",
+    "@types/prettier": "^1.15.2",
+    "@types/socket.io": "^2.1.2",
     "@vue/cli-plugin-pwa": "^3.2.0",
     "@vue/cli-plugin-typescript": "^3.2.0",
     "@vue/cli-service": "^3.2.0",
+    "axios": "^0.18.0",
+    "buffer": "^5.2.1",
+    "firacode": "^1.205.0",
+    "highlight.js": "^9.13.1",
+    "highlightjs-material-dark-theme": "^1.0.0",
+    "material-design-icons-iconfont": "^4.0.3",
+    "mime-types": "^2.1.21",
+    "register-service-worker": "^1.5.2",
+    "roboto-fontface": "^0.10.0",
+    "socket.io-client": "^2.2.0",
+    "stringify-object": "^3.3.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "ts-node-dev": "^1.0.0-pre.32",
+    "tslint-config-standard": "^8.0.1",
     "typescript": "^3.0.0",
-    "vue-template-compiler": "^2.5.17"
+    "vue": "^2.5.17",
+    "vue-class-component": "^6.0.0",
+    "vue-clipboard2": "^0.2.1",
+    "vue-cli-plugin-vuetify": "^0.4.6",
+    "vue-property-decorator": "^7.0.0",
+    "vue-router": "^3.0.1",
+    "vue-socket.io-extended": "^3.2.0",
+    "vue-template-compiler": "^2.5.17",
+    "vuetify": "^1.3.15",
+    "worker-loader": "^2.0.0"
   }
 }
