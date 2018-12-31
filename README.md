@@ -26,6 +26,16 @@ INSPECTOR_PORT=8000 INSPECTOR_NO_LOG=true INSPECTOR_OPEN=false node -r network-i
 - `network-inspector/lib/server`: Hook request api and start server.
 - `network-inspector/lib/open`: Start server and open your browser.
 
+## Screenshots
+
+![0](/images/0.png)
+
+![1](/images/1.png)
+
+![2](/images/2.png)
+
+![3](/images/3.png)
+
 ## API
 
 ```typescript

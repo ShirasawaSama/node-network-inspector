@@ -27,11 +27,13 @@ const NONE = Object.freeze({})
 
 function formatObject (obj: any, i: { i: number }) {
   return Object.entries(obj).map(([title, v]: [string, any]) => {
+    if (v == null || v === 0 || v === '' || (Array.isArray(v)
+      ? !v.length : (typeof v === 'object' && !Object.keys(v).length))) return
     const o = v != null && typeof v === 'object'
     const data = { title, id: i.i++, name: o ? '' : String(v) } as any
     if (o) data.children = formatObject(v, i)
     return data
-  })
+  }).filter(Boolean)
 }
 
 @Component({

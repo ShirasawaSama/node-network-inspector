@@ -69,8 +69,6 @@ export default {
         options = Object.assign(input || {}, options)
       }
 
-      const { nativeProtocols: _, ...opts } = options
-      const href = format(opts)
       const id = Date.now()
       let error: Error | undefined
       try {
@@ -83,8 +81,20 @@ export default {
       } catch (e) {
         error = e
       }
-      event.emit('linking', id, { request: opts,
-        headers: this.getHeaders(), method: this.method, id, href, name: parse(href).pathname })
+
+      const { ...request } = options
+      delete request.nativeProtocols
+      delete request.httpModule
+      Object.keys(request).forEach(key => {
+        const k = key.toLocaleLowerCase()
+        if (k.startsWith('_') || k.startsWith('agent') || k.endsWith('agent') ||
+          typeof request[key] === 'function' || request[key] == null) delete request[key]
+      })
+      const href = request.href || format(request)
+      const u = parse(href)
+      request.protocol = request.protocol || u.protocol
+      event.emit('linking', id, { request,
+        headers: this.getHeaders(), method: this.method, id, href, name: u.pathname })
 
       const handle = (d: string | Buffer) => event.emit('send', id, d)
       this.once('close', () => event.emit('linkEnd', id, Date.now()))

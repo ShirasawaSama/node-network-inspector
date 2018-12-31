@@ -9,11 +9,9 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "esModuleInterop": true,
-    "declaration": true,
     "sourceMap": true,
     "noImplicitAny": false,
-    "baseUrl": "./app",
-    "outDir": "./lib",
+    "baseUrl": ".",
     "types": [
       "webpack-env",
       "vue-socket.io-extended/types/index"
@@ -34,7 +32,8 @@
     "enable": true
   },
   "include": [
-    "app/**/*.ts",
+    "src/**/*.ts",
+    "src/**/*.vue"
   ],
   "exclude": [
     "node_modules"

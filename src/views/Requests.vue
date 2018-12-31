@@ -31,27 +31,18 @@
                 color="primary"
                 indeterminate
               >
-                <img :src="item.icon || FILE" />
+                <img :src="item.icon || FILE" @error="item.icon = FILE" />
               </v-progress-circular>
               <v-progress-circular
-                v-else-if="item.status === 1"
-                size="40"
-                width="3"
-                :color="item.response.statusCode >= 100 && item.response.statusCode < 400
-                  ? 'green' : 'red'"
-                indeterminate
-              >
-                <img :src="item.icon || FILE" />
-              </v-progress-circular>
-              <v-progress-circular
-                v-if="item.status === 2"
+                v-else
                 size="40"
                 width="3"
                 value="100"
-                :color="!item.error && item.response.statusCode >= 100 && item.response.statusCode < 400
+                :color="item.response.statusCode >= 100 && item.response.statusCode < 400
                   ? 'green' : 'red'"
+                :indeterminate="item.status === 1"
               >
-                <img :src="item.icon || FILE" />
+                <img :src="item.icon || FILE" @error="item.icon = FILE" />
               </v-progress-circular>
             </v-list-tile-avatar>
 

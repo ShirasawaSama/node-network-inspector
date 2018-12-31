@@ -2,7 +2,9 @@
 /app
 /public
 /src
+/images
 /postcss.config.js
+/lib-tsconfig.json
 /tsconfig.json
 /tslint.json
 /vue.config.js
