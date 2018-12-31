@@ -47,6 +47,14 @@ import Inspector from 'network-inspector/lib/open'
 
 [Shirasawa](https://github.com/ShirasawaSama)
 
+### About `public/img/icons`
+
+They were copied from [vscode-material-icon-theme](https://github.com/PKief/vscode-material-icon-theme).
+
+License: [MIT](https://github.com/PKief/vscode-material-icon-theme/blob/master/LICENSE.md).
+
+Thanks!
+
 ## License
 
 [MIT](./LICENSE)
