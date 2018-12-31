@@ -8,7 +8,7 @@
   },
   "license": "MIT",
   "homepage": "https://github.com/ShirasawaSama/node-network-inspector",
-  "description": "",
+  "description": "Debugging your Node.js network requests, and replay them.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ShirasawaSama/node-network-inspector.git"

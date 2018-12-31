@@ -1,5 +1,7 @@
 # Node Network Inspector
 
+Debugging your Node.js network requests, and replay them.
+
 ## Usage
 
 ```bash
